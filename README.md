@@ -1,2 +1,2 @@
 # ShopCet47
-Projecto para o CET 47
+Projecto para uma Loja do CET 47.
