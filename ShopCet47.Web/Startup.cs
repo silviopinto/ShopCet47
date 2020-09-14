@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using ShopCet47.Web.Data;
 using ShopCet47.Web.Data.Entities;
 using ShopCet47.Web.Data.Repositories;
+using ShopCet47.Web.Helpers;
 
 namespace ShopCet47.Web
 {
@@ -48,8 +50,12 @@ namespace ShopCet47.Web
 
             //Vou usar a minha classe SeedDB para alimentar as tabelas da BD
             services.AddTransient<SeedDb>();
-            services.AddScoped<IRepository, Repository>();
+            // Antigo
+            //services.AddScoped<IProductRepository, ProductRepository>();
 
+            services.AddScoped<IProductRepository, ProductRepository>();
+            //services.AddScoped<ICountryRepository, CountryRepository>();
+            services.AddScoped<IUserHelper, UserHelper>();
 
 
             services.Configure<CookiePolicyOptions>(options =>
