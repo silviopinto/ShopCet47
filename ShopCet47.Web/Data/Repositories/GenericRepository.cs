@@ -25,6 +25,8 @@ namespace ShopCet47.Web.Data.Repositories
             return await _context.Set<T>()
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Id == Id);
+                
+            
         }
 
         public async Task CreateAsync(T entity)
